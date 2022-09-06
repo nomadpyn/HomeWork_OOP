@@ -32,3 +32,9 @@
 *.app
 Passport/.vs/Passport/v17/.suo
 *.db
+*.vsidx
+*.lock
+*.db-shm
+*.db-wal
+*.opendb
+*.ipch
