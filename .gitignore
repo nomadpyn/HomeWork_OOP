@@ -38,3 +38,9 @@ Passport/.vs/Passport/v17/.suo
 *.db-wal
 *.opendb
 *.ipch
+*.recipe
+*.ilk
+*.log
+*.tlog
+*.idb
+*.pdb
