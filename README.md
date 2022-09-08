@@ -7,15 +7,7 @@
 [List_Stack_Queue](https://github.com/nomadpyn/HomeWork_OOP/tree/master/list_stack_queue)
   
   Создать базовый класс "Список". Реализовать на базе списка "Стек" и "Очередь" с виртуальными функциями вставки и вытаскивания.
-
-   
-
-
-
+[Class_Auto](https://github.com/nomadpyn/HomeWork_OOP/tree/master/class_Auto)
   
-  
-
-
-
-
-   
+  Используя механизм множественного наследования разработайте класс "Автомобиль". Должны быть класс "Двигатель", "КПП", "Кузов", "Колеса".
+    
