@@ -6,5 +6,5 @@
 void Wheels::show_info() const {
 	cout << "Wheels name: " << this->Wname << ". ";
 	cout << this->diam << " R. ";
-	cout << this->amount << "wheels.\n";
+	cout << this->amount << " wheels.\n";
 }
