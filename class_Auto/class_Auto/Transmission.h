@@ -13,6 +13,6 @@ public:
 	// конструкторы с параметрами и по умолчанию
 	Transmission(string n, string t, short s) : Tname{ n }, Type{ t }, Speeds{ s } {}
 	Transmission() {}
-	// описание виртуального метода показа информации о двигатель на экран
+	// описание виртуального метода показа информации о трансмиссии на экран
 	virtual void show_info() const;
 };
