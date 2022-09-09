@@ -1,15 +1,19 @@
 ﻿#pragma once
 #include<string>
-
+// абстрактный базовый класс Домашнее животное
 class Pet
 {
 protected:
-	std::string name{};
+	std::string name{ NULL };
+	std::string subspecies{ NULL };
 public:
+// конструктор по умолчанию
 	Pet(std::string n) {
 		this->name = n;
 	}
-	virtual void show() = 0;
-
+// виртуальные функции
+	virtual void show() const = 0;
+	virtual void sound() const = 0;
+	virtual void type () const = 0;
 };
 
