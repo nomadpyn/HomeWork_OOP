@@ -6,8 +6,9 @@ class Dog : public Pet
 {
 public:
 // конструктор по умолчанию
-	Dog(std::string n, std::string t) : Pet(n) {
+	Dog(std::string n, std::string t, std::string c) : Pet(n) {
 		this->subspecies = t;
+		this->color = c;
 	}
 // описание методов
 	virtual void show() const;

@@ -6,6 +6,7 @@ class Pet
 protected:
 	std::string name{ NULL };
 	std::string subspecies{ NULL };
+	std::string color{ NULL };
 public:
 // конструктор по умолчанию
 	Pet(std::string n) {
