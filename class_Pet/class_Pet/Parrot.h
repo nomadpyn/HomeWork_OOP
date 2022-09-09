@@ -1,12 +1,12 @@
 ﻿#pragma once
 #include<string>
 #include"Pet.h"
-// класс Кошка
-class Cat : public Pet
+// класс Попугай
+class Parrot : public Pet
 {
 public:
 	// конструктор по умолчанию
-	Cat(std::string n, std::string t, std::string c) : Pet(n) {
+	Parrot(std::string n, std::string t, std::string c) : Pet(n) {
 		this->subspecies = t;
 		this->color = c;
 	}

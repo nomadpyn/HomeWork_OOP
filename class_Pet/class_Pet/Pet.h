@@ -17,4 +17,3 @@ public:
 	virtual void sound() const = 0;
 	virtual void type () const = 0;
 };
-

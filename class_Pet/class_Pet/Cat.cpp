@@ -15,4 +15,3 @@ void Cat::type() const {
 void Cat::sound() const {
 	cout << this->name << " say Meow Meow\n";
 }
-

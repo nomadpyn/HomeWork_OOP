@@ -15,4 +15,3 @@ public:
 	virtual void sound() const;
 	virtual void type() const;
 };
-
