@@ -48,3 +48,35 @@ Elem* Tree::Max(Elem* Node) {
 		return Node;
 	}
 }
+// метод перехода к следующему узлу
+Elem* Tree::Next(Elem* Node) {
+	Elem* y = 0;
+	if (Node != 0) {
+		if (Node->right != NULL)
+			return Min(Node->right);
+		y = Node->parent;
+		while (y != 0 && Node == y->right) {
+			Node = y;
+			y = y->parent;
+		}
+	}
+	return y;
+}
+// метод перехода к предыдущему узлу
+Elem* Tree::Previous(Elem* Node) {
+	Elem* y = 0;
+	if (Node != 0) {
+		if (Node->left != NULL)
+			return Max(Node->left);
+		y = Node->parent;
+		while (y != 0 && Node == y->left) {
+			Node = y;
+			y = y->parent;
+		}
+	}
+	return y;
+}
+// метод нахождения корня дерева
+Elem* Tree::GetRoot() {
+	return this->root;
+}
