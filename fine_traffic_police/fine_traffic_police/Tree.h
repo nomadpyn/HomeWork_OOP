@@ -16,7 +16,7 @@ public:
 	Elem* Next(Elem* Node);
 	Elem* Previous(Elem* Node);
 	void Insert(Elem* nd);
-	void Del(Elem* nd);
+	void Del(Elem* nd=0);
 	Elem* GetRoot();
 };
 
