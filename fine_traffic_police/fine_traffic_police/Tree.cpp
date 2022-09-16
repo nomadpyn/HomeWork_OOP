@@ -32,3 +32,19 @@ Elem* Tree::search(Elem* Node, string key) {
 	}
 	return Node;
 }
+// метод поиска самого "левого" узла дерева
+Elem* Tree::Min(Elem* Node) {
+	if (Node != 0) {
+		while (Node->left != NULL)
+			Node = Node->left;
+		return Node;
+	}
+}
+// метод поиска самого "правого" узла дерева
+Elem* Tree::Max(Elem* Node) {
+	if (Node != 0) {
+		while (Node->right != NULL)
+			Node = Node->right;
+		return Node;
+	}
+}
