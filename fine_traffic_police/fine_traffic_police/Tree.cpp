@@ -9,7 +9,7 @@ Tree::Tree() {
 }
 
 Tree::~Tree() {
-	Del();
+	delete[] this->root;
 }
 // метод вывода всего дерева на экран
 void Tree::print(Elem * Node) {
@@ -17,8 +17,8 @@ void Tree::print(Elem * Node) {
 		print(Node->left);
 		cout << Node->number << endl;
 		for (int i = 0; i < Node->fines.size(); i++)
-			cout << Node->fines[i] << " ";
-		cout << endl;
+			cout << Node->fines[i] << endl;
+		cout << endl << endl;
 		print(Node->right);
 	}
 }
@@ -131,6 +131,7 @@ void Tree::Del(Elem* nd) {
 		else {
 			if (y == y->parent->left)
 				y->parent->left = Node;
+			else
 				y->parent->right = Node;
 		}
 
