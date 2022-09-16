@@ -80,3 +80,32 @@ Elem* Tree::Previous(Elem* Node) {
 Elem* Tree::GetRoot() {
 	return this->root;
 }
+// метод вставки элемента в дерево
+void Tree::Insert(Elem* nd) {
+	if (search(this->root, nd->number) != 0) {
+		Elem* y = search(this->root, nd->number);
+		y->fines.push_back(nd->fines[0]);
+	}
+	else {
+		nd->left = NULL;
+		nd->right = NULL;
+		Elem* y = NULL;
+		Elem* Node = root;
+		while (Node != 0) {
+			y = Node;
+			if (nd->number < Node->number)
+				Node = Node->left;
+			else
+				Node = Node->right;
+		}
+			nd->parent = y;
+			if (y == 0)
+				root = nd;
+			else {
+				if (nd->number < y->number)
+					y->left = nd;
+				else
+					y->right = nd;
+			}
+		}
+	}
