@@ -22,3 +22,13 @@ void Tree::print(Elem * Node) {
 		print(Node->right);
 	}
 }
+// метод поиска элемента в дереве
+Elem* Tree::search(Elem* Node, string key) {
+	while (Node != 0 && key != Node->number) {
+		if (key < Node->number)
+			Node = Node->left;
+		else
+			Node = Node->right;
+	}
+	return Node;
+}
