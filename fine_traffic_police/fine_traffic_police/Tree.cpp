@@ -109,3 +109,38 @@ void Tree::Insert(Elem* nd) {
 			}
 		}
 	}
+// метод удаления элемента из дерева
+void Tree::Del(Elem* nd) {
+	if (nd != 0) {
+		Elem* Node, * y;
+		if (nd->left == 0 || nd->right == 0)
+			y = nd;
+		else
+			y = Next(nd);
+
+		if (y->left != 0)
+			Node = y->left;
+		else
+			Node = y->right;
+
+		if (Node != 0)
+			Node->parent = y->parent;
+
+		if (y->parent == 0)
+			root = Node;
+		else {
+			if (y == y->parent->left)
+				y->parent->left = Node;
+				y->parent->right = Node;
+		}
+
+		if (y != nd) {
+			nd->number = y->number;
+			nd->fines = y->fines;
+		}
+		delete y;
+	}
+	else
+		while (root != 0)
+			Del(root);
+}
