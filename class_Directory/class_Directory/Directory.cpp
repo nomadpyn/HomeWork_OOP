@@ -17,7 +17,7 @@ void Directory::create() {
 }
 // метод вывода информации о организации на экран
 void Directory::show() const {
-	cout << "Name of company - " << this->name << endl;
+	cout << "\nName of company - " << this->name << endl;
 	cout << "Owner of company - " << this->vlad << endl;
 	cout << "Company phone - " << this->phone << endl;
 	cout << "Adress of company - " << this->adres << endl;

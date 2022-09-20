@@ -35,8 +35,10 @@ void showFromFile() {
 	ifstream fl("data.txt", ios::in | ios::binary);
 	Directory temp;
 	for (int i = 0; i < count;i++) {
+		cout << "\n* * * Company Number " << i + 1 << " * * *\n";
 		fl.read(reinterpret_cast<char*>(&temp), sizeof(Directory));
 		temp.show();
+		
 	}
 	fl.close();
 }
@@ -135,4 +137,71 @@ void searchData(const char data[64]) {
 
 	}
 	fl.close();
+}
+
+void searchMenu() {
+	cout << "1 - By name. 2 - By owner. 3 - By phone. 4 - By Career.\n";
+	int search{ 0 };
+	cin >> search;
+	cin.ignore();
+	switch (search) {
+	case 1: {
+		char name[64]{};
+		cin.getline(name, 64);
+		searchName(name);
+		break;
+	}
+	case 2: {
+		char owner[64]{};
+		cin.getline(owner, 64);
+		searchOwner(owner);
+		break;
+	}
+	case 3: {
+		char phone[12]{};
+		cin.getline(phone, 12);
+		searchPhone(phone);
+		break;
+	}
+	case 4: {
+		char data[64]{};
+		cin.getline(data, 64);
+		searchData(data);
+		break;
+	}
+	default:
+		cout << "Back to menu\n";
+		break;
+	}
+}
+void menu() {
+	int search{ 1 };
+	while (search != 0) {
+		cout << "\nWelcome in Company Directory\nWhat you want to do?\n";
+		cout << "1-Show all Company's. 2 - Search company. 3 - Add company to Directory. 0 - Exit\n";
+		cin >> search;
+		cin.ignore();
+		switch (search) {
+		case 1: {
+			showFromFile();
+			break;
+		}
+		case 2: {
+			searchMenu();
+			break;
+		}
+		case 3: {
+			Directory A;
+			A.create();
+			saveToFile(A);
+			break;
+		}
+		case 0:
+			cout << "Googbye\n";
+			break;
+		default:
+			cout << "Try again\n";
+			break;
+		}
+	}
 }
