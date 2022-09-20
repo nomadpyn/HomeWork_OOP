@@ -64,3 +64,27 @@ void searchName(const char name[64]) {
 	}
 	fl.close();
 }
+// функция поиска в файле по Владельцу
+void searchOwner(const char vlad[64]) {
+	ifstream fl("data.txt", ios::in | ios::binary);
+	int count = howManyObj();
+	Directory temp;
+	char vlad_t[64]{};
+	char g{};
+	for (int i = 0; i < count; i++) {
+		fl.seekg((i * 268)+64, ios::beg);
+		for (int y = 0; y < 64; y++) {
+			g = fl.get();
+			vlad_t[y] = g;
+			if (g == '\0')
+				break;
+		}
+		if (strcmp(vlad_t, vlad) == 0) {
+			fl.seekg((i * 268), ios::beg);
+			fl.read(reinterpret_cast<char*>(&temp), sizeof(Directory));
+			temp.show();
+		}
+
+	}
+	fl.close();
+}
