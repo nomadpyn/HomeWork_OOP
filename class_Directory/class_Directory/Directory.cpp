@@ -1,8 +1,8 @@
-#include "Directory.h"
+п»ї#include "Directory.h"
 #include<iostream>
 
 using namespace std;
-// метод создания организации в справочнике
+// РјРµС‚РѕРґ СЃРѕР·РґР°РЅРёСЏ РѕСЂРіР°РЅРёР·Р°С†РёРё РІ СЃРїСЂР°РІРѕС‡РЅРёРєРµ
 void Directory::create() {
 	cout << "Enter name of company\n";
 	cin.getline(this->name, 64);
@@ -15,7 +15,7 @@ void Directory::create() {
 	cout << "Enter career of company\n";
 	cin.getline(this->data, 64);
 }
-// метод вывода информации о организации на экран
+// РјРµС‚РѕРґ РІС‹РІРѕРґР° РёРЅС„РѕСЂРјР°С†РёРё Рѕ РѕСЂРіР°РЅРёР·Р°С†РёРё РЅР° СЌРєСЂР°РЅ
 void Directory::show() const {
 	cout << "Name of company - " << this->name << endl;
 	cout << "Owner of company - " << this->vlad << endl;

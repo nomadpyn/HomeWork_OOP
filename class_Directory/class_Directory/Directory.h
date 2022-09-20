@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 
 class Directory
 {
@@ -8,9 +8,9 @@ class Directory
 	char adres[64]{};
 	char data[64]{};
 public:
-// конструктор по умолчанию
+// РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
 	Directory(){}
-// описание методов класса
+// РѕРїРёСЃР°РЅРёРµ РјРµС‚РѕРґРѕРІ РєР»Р°СЃСЃР°
 	void create();
 	void show() const;	
 };
