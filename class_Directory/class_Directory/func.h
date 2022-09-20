@@ -88,3 +88,51 @@ void searchOwner(const char vlad[64]) {
 	}
 	fl.close();
 }
+// функция поиска по номеру телефона
+void searchPhone(const char phone[12]) {
+	ifstream fl("data.txt", ios::in | ios::binary);
+	int count = howManyObj();
+	Directory temp;
+	char phone_t[12]{};
+	char g{};
+	for (int i = 0; i < count; i++) {
+		fl.seekg((i * 268) + 128, ios::beg);
+		for (int y = 0; y < 12; y++) {
+			g = fl.get();
+			phone_t[y] = g;
+			if (g == '\0')
+				break;
+		}
+		if (strcmp(phone_t, phone) == 0) {
+			fl.seekg((i * 268), ios::beg);
+			fl.read(reinterpret_cast<char*>(&temp), sizeof(Directory));
+			temp.show();
+		}
+
+	}
+	fl.close();
+}
+// функция поиска по роду деятельности
+void searchData(const char data[64]) {
+	ifstream fl("data.txt", ios::in | ios::binary);
+	int count = howManyObj();
+	Directory temp;
+	char data_t[64]{};
+	char g{};
+	for (int i = 0; i < count; i++) {
+		fl.seekg((i * 268) + 204, ios::beg);
+		for (int y = 0; y < 64; y++) {
+			g = fl.get();
+			data_t[y] = g;
+			if (g == '\0')
+				break;
+		}
+		if (strcmp(data_t, data) == 0) {
+			fl.seekg((i * 268), ios::beg);
+			fl.read(reinterpret_cast<char*>(&temp), sizeof(Directory));
+			temp.show();
+		}
+
+	}
+	fl.close();
+}
