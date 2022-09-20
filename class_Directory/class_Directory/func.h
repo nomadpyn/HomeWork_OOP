@@ -14,3 +14,17 @@ void saveToFile(Directory obj) {
 	fl.write(reinterpret_cast<char*>(&obj), sizeof(Directory));
 	fl.close();
 }
+//функция вычисления количества объектов в файле
+int howManyObj() {
+	ifstream fl("data.txt", ios::in| ios::binary);
+	if (!fl) {
+		cout << "File not found\n";
+	}
+	int count{0};
+	while (!fl.eof()){
+		fl.get(); 
+		count++;
+	}
+	fl.close();
+	return count/ sizeof(Directory);
+}
