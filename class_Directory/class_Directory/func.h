@@ -28,3 +28,14 @@ int howManyObj() {
 	fl.close();
 	return count/ sizeof(Directory);
 }
+// функция отображения всего справочника
+void showFromFile() {
+	int count = howManyObj();
+	ifstream fl("data.txt", ios::in | ios::binary);
+	Directory temp;
+	for (int i = 0; i < count;i++) {
+		fl.read(reinterpret_cast<char*>(&temp), sizeof(Directory));
+		temp.show();
+	}
+	fl.close();
+}
